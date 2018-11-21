@@ -27,6 +27,9 @@ build = {
 			ln -s libluajit-5.1.so.2.1.0 libluajit-5.1.so.2
 			ln -s libluajit-5.1.so.2.1.0 libluajit-5.1.so
 		)
+		ls nginx
+		ls nginx/sbin/
+		ls nginx/sbin/$STACK/
 		cp nginx/sbin/$STACK/nginx "$BIN_DIR"
 	]],
 	install = {
