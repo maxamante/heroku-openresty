@@ -18,12 +18,10 @@ dependencies = {
 build = {
 	type = "command",
 	install_command = [[
-		apt-get install -y libpcre3-dev libssl-dev perl make build-essential curl
-
 		LIB_DIR=`cd $(PREFIX)/../../../../; pwd`
 		BIN_DIR=`cd $LIB_DIR/../../bin; pwd`
 		STACK=${STACK:-cedar}
-		cp lib/$STACK/libpcre.so.1 "$LIB_DIR"
+		[ -d lib/$STACK/ ] cp -a lib/$STACK/. "$LIB_DIR"
 		cp luajit/lib/libluajit-5.1.so.2.1.0 "$LIB_DIR"
 		(
 			cd "$LIB_DIR"
