@@ -4,7 +4,6 @@ version = "dev-2"
 
 source = {
 	url = "git://github.com/maxamante/heroku-openresty.git"
-	branch = "master"
 }
 
 description = {
