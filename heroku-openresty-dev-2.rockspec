@@ -18,11 +18,10 @@ dependencies = {
 build = {
 	type = "command",
 	install_command = [[
-		apt-get -y install software-properties-common
-
 		LIB_DIR=`cd $(PREFIX)/../../../../; pwd`
 		BIN_DIR=`cd $LIB_DIR/../../bin; pwd`
 		STACK=${STACK:-cedar}
+		cp lib/$STACK/libpcre.so.1 "$LIB_DIR"
 		cp luajit/lib/libluajit-5.1.so.2.1.0 "$LIB_DIR"
 		(
 			cd "$LIB_DIR"
