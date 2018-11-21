@@ -18,6 +18,8 @@ dependencies = {
 build = {
 	type = "command",
 	install_command = [[
+		apt-get install -y libpcre3-dev libssl-dev perl make build-essential curl
+
 		LIB_DIR=`cd $(PREFIX)/../../../../; pwd`
 		BIN_DIR=`cd $LIB_DIR/../../bin; pwd`
 		STACK=${STACK:-cedar}
