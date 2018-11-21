@@ -21,7 +21,9 @@ build = {
 		LIB_DIR=`cd $(PREFIX)/../../../../; pwd`
 		BIN_DIR=`cd $LIB_DIR/../../bin; pwd`
 		STACK=${STACK:-cedar}
-		if [ -d lib/$STACK/ ]; then cp -a lib/$STACK/. "$LIB_DIR"; fi
+		if [ -d "lib/$STACK/" ]; then
+			cp -a lib/$STACK/. "$LIB_DIR"
+		fi
 		cp luajit/lib/libluajit-5.1.so.2.1.0 "$LIB_DIR"
 		(
 			cd "$LIB_DIR"
